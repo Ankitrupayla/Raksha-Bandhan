@@ -1,0 +1,189 @@
+/* ================================
+   animation.css – Custom Animations
+   ================================ */
+
+/* -------------------------------
+   Rakhi Float Animation
+---------------------------------- */
+@keyframes rakhiFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.rakhi-float {
+  animation: rakhiFloat 3s ease-in-out infinite;
+}
+
+/* -------------------------------
+   Confetti Pop Animation
+---------------------------------- */
+@keyframes confettiPop {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-100px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) scale(0.5);
+  }
+}
+
+.confetti {
+  width: 10px;
+  height: 10px;
+  background-color: #f5a623;
+  position: absolute;
+  animation: confettiPop 1.5s ease-out forwards;
+  z-index: 1050; /* above Bootstrap components */
+  border-radius: 50%;
+}
+
+/* Extra Confetti Colors for Random Mix */
+.confetti.red { background-color: #e74c3c; }
+.confetti.blue { background-color: #3498db; }
+.confetti.green { background-color: #2ecc71; }
+.confetti.purple { background-color: #9b59b6; }
+.confetti.yellow { background-color: #f1c40f; }
+
+/* -------------------------------
+   Card Flip Animation – Bootstrap 3D
+---------------------------------- */
+.card-flip {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  will-change: transform;
+}
+
+.card-flip:hover .card-flip-inner,
+.card-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.card-front {
+  background: #fff;
+}
+
+.card-back {
+  background: #ffecec;
+  transform: rotateY(180deg);
+}
+
+/* -------------------------------
+   Fade-in On Scroll
+---------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-in from Left and Right */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-left.visible,
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* -------------------------------
+   Countdown Blink
+---------------------------------- */
+@keyframes blink {
+  0%, 100% { visibility: visible; }
+  50% { visibility: hidden; }
+}
+
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+/* -------------------------------
+   Bootstrap 3D Button Effect
+---------------------------------- */
+.btn-3d {
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: #dc3545;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.3rem #a71d2a;
+  transition: all 0.2s ease;
+}
+
+.btn-3d:hover {
+  box-shadow: 0 0.1rem #a71d2a;
+  transform: translateY(2px);
+}
+
+.btn-3d:active {
+  box-shadow: 0 0 #a71d2a;
+  transform: translateY(4px);
+}
+
+/* -------------------------------
+   Accessibility – Reduce Motion
+---------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .rakhi-float,
+  .confetti,
+  .card-flip-inner,
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right,
+  .blink {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* animation.css – Custom Animations */
+
+@keyframes rakhiFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brother-Sister Memories – Raksha Bandhan</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animation.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Hero Section -->
+  <section class="text-center py-5 bg-warning-subtle shadow-sm">
+    <div class="container">
+      <h1 class="display-5 fw-bold text-danger">👫 Brother-Sister Memories</h1>
+      <p class="lead text-secondary">A walk through childhood mischief and grown-up love 💖</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="container py-5">
+    <div class="row g-4">
+
+      <!-- Static Photos -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/siblings/sib1.jpg" class="card-img-top" alt="Sibling Memory 1">
+          <div class="card-body">
+            <h5 class="card-title">Tied with Love</h5>
+            <p class="card-text">Our first Rakhi celebration together!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/siblings/sib2.jpg" class="card-img-top" alt="Sibling Memory 2">
+          <div class="card-body">
+            <h5 class="card-title">Masti Unlimited</h5>
+            <p class="card-text">We never needed a reason to fight & laugh!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GIF -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/gifs/funny-fight.gif" class="card-img-top" alt="Funny Rakhi GIF">
+          <div class="card-body">
+            <h5 class="card-title">Sibling Teasing 🤪</h5>
+            <p class="card-text">Some things never change!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Swiper Carousel for Timeline Memories -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="text-primary mb-4">📸 Our Rakhi Timeline</h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <img src="images/siblings/rakhi2010.jpg" class="img-fluid rounded" alt="2010 Memory">
+            <p class="mt-2">2010 - First Rakhi photo ever!</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/siblings/rakhi2015.jpg" class="img-fluid rounded" alt="2015 Memory">
+            <p class="mt-2">2015 - So grown up already!</p>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/siblings/rakhi2020.jpg" class="img-fluid rounded" alt="2020 Memory">
+            <p class="mt-2">2020 - Still annoying each other 😄</p>
+          </div>
+
+        </div>
+        <div class="swiper-pagination mt-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Swiper Init
+    const swiper = new Swiper('.mySwiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  </script>
+  <!-- Footer -->
+<div id="footer"></div>
+</body>
+</html>
